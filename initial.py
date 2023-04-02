@@ -32,7 +32,10 @@ while not valid_Input:
         tickerSelection += tickers + " [" + str(x) + "] || " 
         x += 1 
     tickerSelection += "\n"
-    val = int(input("Please enter the number for the ticker you would like to track: \n" + tickerSelection))
+    try:
+        val = int(input("Please enter the number for the ticker you would like to track: \n" + tickerSelection))
+    except:
+        print("Please input integer only...") 
     # print("Yo"val)
     if val >= 0 and val <= len(dict) -1:
         valid_Input = True
